@@ -60,7 +60,7 @@ echo "NOTE: the master branch fails, since we didn't update it"
 echo "      to the current origin/master tracking branch"
 echo "      git push origin work_br:work_br would have only pushed work_br"
 git push origin
-
+git remote -v
 popd
 
 pushd origin
