@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -e dag-example && rm -rf origin ]
+[ -e origin && rm -rf origin ]
 mkdir origin
 pushd origin
 
@@ -10,7 +10,6 @@ echo "C1" > file
 git add file
 git commit -m "C1 commit"
 git branch work_br
-
 
 echo "C2" > file
 git add file
@@ -36,6 +35,7 @@ git tag "V1.0" -m "The V1.0 release"
 popd
 
 git clone origin local
+
 pushd origin
 
 git merge work_br
@@ -48,11 +48,10 @@ popd
 pushd local
 
 git fetch
-git log origin/master work_br --graph
+git log --all --graph
 
-git checkout work_br
+git checkout origin/work_br -b work_br
 
-git checkout work_br
 echo "C7" > file
 git add file
 git commit -m "C7 commit"
