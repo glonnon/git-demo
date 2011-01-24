@@ -1,0 +1,45 @@
+mkdir dag-example
+
+git init
+
+echo "C1" > file
+git add file
+git commit -m "C1 commit"
+git branch work_br
+
+
+echo "C2" > file
+git add file
+git commit -m "C2 commit"
+
+echo "C3" > file
+git add file
+git commit -m "C3 commit"
+
+git checkout work_br
+
+echo "C4" > file
+git add file
+git commit -m "C4 commit"
+
+echo "C5" > file
+git add file
+git commit -m "C5 commit"
+
+git checkout master
+git tag "V1.0" -m "The V1.0 release"
+
+git merge work_br
+echo "C6" > file
+git add file
+git commit -m "C6 commit, merge"
+
+git checkout work_br
+echo "C7" > file
+git add file
+git commit -m "C7 commit"
+
+git checkout master
+echo "C8" > file
+git add file
+git commit -m "C8 commit"

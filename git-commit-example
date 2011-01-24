@@ -1,0 +1,32 @@
+#!/bin/bash
+# example of 3 commits in git
+
+[ -e commit-example && rm -rf commit-example ]
+mkdir commit-example
+cd example
+
+git init
+echo "hello" > B1
+git add B1
+git commit -m "added B1"
+
+echo "DAG after first commitgit "
+
+git log --graph
+
+echo "world" > B2
+git add B2
+git commit -m "added B2"
+
+git log --graph
+
+mkdir T2
+mv  B1 B2 T2
+cp T2/B1 B3
+git add .
+git commit -m "created T2, B3"
+
+git log --graph
+git ls-tree -rtl HEAD
+
+
