@@ -3,7 +3,7 @@
 
 [ -e commit-example && rm -rf commit-example ]
 mkdir commit-example
-cd example
+cd commit-example
 
 git init
 echo "hello" > B1
