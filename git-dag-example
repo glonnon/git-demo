@@ -1,4 +1,8 @@
+#!/bin/bash
+
+[ -e dag-example && rm -rf dag-example ]
 mkdir dag-example
+cd dag-example
 
 git init
 

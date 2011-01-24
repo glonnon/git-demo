@@ -1,5 +1,9 @@
+#!/bin/bash
+
+[ -e dag-example && rm -rf origin ]
 mkdir origin
 pushd origin
+
 git init
 
 echo "C1" > file
